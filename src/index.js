@@ -16,12 +16,12 @@ import Keycloak from "keycloak-connect";
 // - confidential-port: Port for confidential requests (0 disables)
 const kcConfig = {
   realm: "irisa",
-  "auth-server-url": "https://em-stage.irisaco.com/oauth/",
+  "auth-server-url": "your-keycloak-server-url/auth",
   "ssl-required": "external",
   "bearer-only": false,
-  resource: "sso-nodejs-keycloak-connect-test",
+  resource: "keycloak-client-id", // Replace with your actual client ID
   credentials: {
-    secret: "QpM9ScuOXxFL8nnXTDCVOWygY05IfLh9",
+    secret: "secret-value", // Replace with your actual client secret
   },
   "confidential-port": 0,
 };
