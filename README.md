@@ -8,6 +8,7 @@ A simple Node.js Express application demonstrating Single Sign-On (SSO) integrat
 
 - [Features](#features)
 - [Prerequisites](#prerequisites)
+- [Keycloak Client Setup](#keycloak-client-setup)
 - [Installation](#installation)
 - [Configuration](#configuration)
 - [Running the Application](#running-the-application)
@@ -33,6 +34,20 @@ A simple Node.js Express application demonstrating Single Sign-On (SSO) integrat
 - [npm](https://www.npmjs.com/) (comes with Node.js)
 - Access to a running [Keycloak](https://www.keycloak.org/) server
 - A Keycloak realm and client configured
+
+---
+
+## Keycloak Client Setup
+
+Before running the application, create a client in your Keycloak realm with the following settings:
+
+- **Client Type:** confidential
+- **Standard Flow:** ✅ Enabled
+- **Direct Access Grants:** ❌ Disabled (not needed)
+- **Valid Redirect URIs:** `http://localhost:3000/*`
+- **Base URL:** `http://localhost:3000`
+
+Make sure to copy the client secret and update it in your `src/index.js` configuration.
 
 ---
 
@@ -110,6 +125,20 @@ The server will run on [http://localhost:3000](http://localhost:3000).
 - [npm](https://www.npmjs.com/)
 - دسترسی به یک سرور Keycloak فعال
 - پیکربندی Realm و Client در Keycloak
+
+---
+
+## تنظیم کلاینت در Keycloak
+
+قبل از اجرای برنامه، یک کلاینت در Realm مربوطه در Keycloak با تنظیمات زیر ایجاد کنید:
+
+- **نوع کلاینت:** confidential
+- **Standard Flow:** فعال (✅)
+- **Direct Access Grants:** غیرفعال (❌)
+- **Valid Redirect URIs:** `http://localhost:3000/*`
+- **Base URL:** `http://localhost:3000`
+
+حتماً secret کلاینت را کپی کرده و در فایل `src/index.js` قرار دهید.
 
 ---
 
